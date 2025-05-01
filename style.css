@@ -3,6 +3,7 @@ body {
     background-attachment: fixed;
     background-size: contain;
 }
+
 header {
     width: 100%;
     height: 10vh;
@@ -72,7 +73,7 @@ main {
     height: 10vh;
     padding: 1em;
     margin: auto;
-    margin-bottom: 0.5em ;
+    margin-bottom: 0.5em;
 
     display: flex;
     justify-content: space-evenly;
@@ -86,6 +87,7 @@ main {
 .navImg {
     height: 80%;
 }
+
 /* #mainNavBar img {
     display: none;
 } */
@@ -108,11 +110,13 @@ main {
     font-size: 1.7ch;
 }
 
-#article, #traceHoney {
+#article,
+#traceHoney {
     background-color: #fbeeaa;
     width: 80%;
     border-radius: 30px;
 }
+
 main figure {
     padding: 1em;
     display: flex;
@@ -120,13 +124,15 @@ main figure {
     justify-content: space-between;
     /* align-items: center; */
 }
-main figure >img {
+
+main figure>img {
     border-radius: 30px;
     flex-basis: 30%;
     width: 20%;
     flex-grow: 1;
 }
-main figure > figcaption {
+
+main figure>figcaption {
     font-size: 2ch;
     flex-basis: 50%;
     flex-grow: 1;
@@ -137,6 +143,36 @@ main figure > figcaption {
     order: 2;
 }
 
+#card {
+    width: 400px;
+    border-radius: 25%;
+    overflow: hidden;
+    background-color: #fbeeaa;
+}
+
+.cardTxt {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 2em;
+}
+.cardInfo {
+    flex-basis: 70%;
+    margin-bottom: 0.5em;
+}
+.cardPrice{
+    flex-basis: 30%;
+    font-size: 1.5rem;
+}
+.cardTxt>button {
+    flex-basis: 90%;
+    background-color: #F3DF85;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 30px;
+}
+
 /* smartphone e tablet */
 @media screen and (max-width:768px) {
     #mainNavBar {
@@ -144,8 +180,10 @@ main figure > figcaption {
         margin: 0;
         margin-bottom: 0.5em;
     }
-    #article, #traceHoney {
+
+    #article,
+    #traceHoney {
         width: 100%;
     }
-  
+
 }
