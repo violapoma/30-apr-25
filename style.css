@@ -28,12 +28,12 @@ header {
     /* border: 3px solid purple; */
 }
 
-#logo img {
+#logo>img {
     height: 90%;
     /* border: 1px solid palevioletred; */
 }
 
-#logo figcaption {
+#logo>figcaption {
     font-family: "Rouge Script", cursive;
     font-weight: 650;
     font-size: 3ch;
@@ -72,6 +72,7 @@ main {
     height: 10vh;
     padding: 1em;
     margin: auto;
+    margin-bottom: 0.5em ;
 
     display: flex;
     justify-content: space-evenly;
@@ -81,13 +82,7 @@ main {
 
     /* border: 2px double #602304 */
 }
-/* smartphone e tablet */
-@media screen and (max-width:768px) {
-    #mainNavBar {
-        width: 100%;
-        margin: 0;
-    }
-}
+
 .navImg {
     height: 80%;
 }
@@ -111,4 +106,46 @@ main {
 
 #mainNavBar a {
     font-size: 1.7ch;
+}
+
+#article, #traceHoney {
+    background-color: #fbeeaa;
+    width: 80%;
+    border-radius: 30px;
+}
+main figure {
+    padding: 1em;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+main figure >img {
+    border-radius: 30px;
+    flex-basis: 30%;
+    width: 20%;
+    flex-grow: 1;
+}
+main figure > figcaption {
+    font-size: 2ch;
+    flex-basis: 50%;
+    flex-grow: 1;
+    padding: 0 2em;
+}
+
+#traceHoney img {
+    order: 2;
+}
+
+/* smartphone e tablet */
+@media screen and (max-width:768px) {
+    #mainNavBar {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 0.5em;
+    }
+    #article, #traceHoney {
+        width: 100%;
+    }
+  
 }
