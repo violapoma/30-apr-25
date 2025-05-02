@@ -22,22 +22,23 @@
         </figure>
 
         <nav id="headerNavBar">
-            <span>
+            <span onmouseover="showNavImg(this)" onmouseout="hideNavImg(this)">
                 <img class="navImg" src="assets/logo.png">
                 <a href="#article">Our VHoney</a>
             </span>
-            <span>
+            <span onmouseover="showNavImg(this)" onmouseout="hideNavImg(this)">
                 <img class="navImg" src="assets/logo.png">
                 <a href="#traceHoney">Trace Honey</a>
             </span>
-            <span>
+            <span onmouseover="showNavImg(this)" onmouseout="hideNavImg(this)">
                 <img class="navImg" src="assets/logo.png">
                 <a href="#card">Shop</a>
             </span>
-            <span>
+            <span onmouseover="showNavImg(this)" onmouseout="hideNavImg(this)">
                 <img class="navImg" src="assets/logo.png">
                 <a href="#">Facilities</a></span>
-            <span><img class="navImg" src="assets/logo.png">
+            <span onmouseover="showNavImg(this)" onmouseout="hideNavImg(this)">
+                <img class="navImg" src="assets/logo.png">
                 <a href="#">Contacts</a>
             </span>
         </nav>
@@ -74,7 +75,7 @@
                             <p>Italian, not treated, from apple cider</p>
                         </div>
                         <div class="cardPrice">7€/kg</div>
-                        <button id="addToCart">🍯 Add to cart 🍯</button>
+                        <button id="addToCart" onclick="addToCart()">🍯 Add to cart 🍯</button>
                     </div>
                 </div>
             </div>
@@ -94,6 +95,21 @@
         </section> -->
 
     </main>
+
+    <script>
+        let TOT_ARTICLES = 0; 
+        function addToCart(){
+            console.log("prima: " + TOT_ARTICLES)
+            TOT_ARTICLES++;
+            console.log(TOT_ARTICLES);
+        }
+        function showNavImg(e) {
+            e.querySelector('img').style.display="block";
+        }
+        function hideNavImg(e) {
+            e.querySelector('img').style.display="none";
+        }
+    </script>
 </body>
 
 </html>
