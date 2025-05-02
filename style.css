@@ -97,28 +97,44 @@ main {
 
 #article,
 #traceHoney {
-    background-color: #fbeeaa;
-    width: 80%;
-    border-radius: 30px;
+    /* background-color: #fbeeaa; */
+    max-width: 80%;
+    scroll-margin-top: 12vh; /*per il link nel nav*/
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    /* border: 3px solid fuchsia; */
 }
 
 section>figure {
-    padding: 1em;
+    background-color: #fbeeaa;
+    border-radius: 30px;
+
+    flex-basis: 70%;
+
+    padding: 2em;
+
     display: flex;
     flex-wrap: wrap-reverse;
+
     justify-content: space-between;
-    /* align-items: center; */
+    align-items: center;
 }
 
-section>figure>img {
+section>figure img {
+    display: block;
     border-radius: 30px;
-    flex-basis: 30%;
-    width: 20%;
-    flex-grow: 1;
+    max-width: 410px;
+
+    margin: 1.5em;
+
+    border: 3px solid #602304;
 }
 
 section>figure>figcaption {
-    font-size: 2ch;
+    font-size: 1.5rem;
     flex-basis: 50%;
     flex-grow: 1;
     padding: 0 2em;
@@ -129,10 +145,22 @@ section>figure>figcaption {
 }
 
 #card {
-    width: 400px;
     border-radius: 25%;
     overflow: hidden;
     background-color: #fbeeaa;
+    scroll-margin-top: 12vh;
+    flex-basis: 25%;
+ 
+}
+.cardContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#card > .cardContent img{
+    display: block;
+    max-width: 400px;
 }
 
 .cardTxt {
@@ -141,6 +169,7 @@ section>figure>figcaption {
     align-items: center;
     justify-content: center;
     padding: 2em;
+    text-align: center;
 }
 .cardInfo {
     flex-basis: 70%;
@@ -151,10 +180,11 @@ section>figure>figcaption {
     font-size: 1.5rem;
 }
 .cardTxt>button {
-    flex-basis: 90%;
+    flex-basis: 80%;
     background-color: #F3DF85;
-    font-size: 1.3rem;
+    /* font-size: 1.3rem; */
     border: none;
+    padding: 0.3em 0.2em;
     border-radius: 30px;
 }
 
@@ -183,10 +213,43 @@ section>figure>figcaption {
         display: none;
     }
 
-
-    #article,
-    #traceHoney {
-        width: 90%;
+    #article {
+        justify-content: center;
+        align-items: center;
+    }
+    section>figure {
+        padding:1em;
+        justify-content: center;
+    }
+    section>figure img {
+    max-width: 230px;
+    margin:0;
+    }
+    section>figure>figcaption {
+        font-size: 1rem;
+        margin-bottom: 1em;
     }
 
+
+    #card {
+        margin-top: 1em;
+        flex-basis: 45%;
+        font-size: 1rem;
+    }
+    #card > .cardContent img {
+        max-width: 300px;
+    }
+
+}
+
+@media screen and (max-width:425px) {
+    #card {
+        flex-basis: 70%;
+    }
+}
+
+@media screen and (max-width:375px) {
+    #card {
+        flex-basis: 90%;
+    }
 }
