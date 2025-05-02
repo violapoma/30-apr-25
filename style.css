@@ -106,8 +106,7 @@ main {
 }
 
 
-#article,
-#traceHoney {
+#article {
     max-width: 80%;
     scroll-margin-top: 12vh; /*per il link nel nav*/
 
