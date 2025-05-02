@@ -56,3 +56,7 @@ a {
 section {
     margin-bottom: 0.5em;
 }
+
+html {
+    font-size: 12px;
+}
