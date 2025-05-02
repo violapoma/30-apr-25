@@ -102,7 +102,7 @@ main {
     border-radius: 30px;
 }
 
-main figure {
+section>figure {
     padding: 1em;
     display: flex;
     flex-wrap: wrap-reverse;
@@ -110,14 +110,14 @@ main figure {
     /* align-items: center; */
 }
 
-main figure>img {
+section>figure>img {
     border-radius: 30px;
     flex-basis: 30%;
     width: 20%;
     flex-grow: 1;
 }
 
-main figure>figcaption {
+section>figure>figcaption {
     font-size: 2ch;
     flex-basis: 50%;
     flex-grow: 1;
