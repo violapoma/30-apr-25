@@ -23,7 +23,7 @@ header {
     /* border: 1px solid pink; */
 }
 
-#logo {
+.logo {
     flex-basis: 20%;
     display: flex;
     align-items: center;
@@ -32,14 +32,14 @@ header {
     /* border: 3px solid purple; */
 }
 
-#logo>img {
+.logo>img {
     display: block;
     max-width: 20%;
     padding-right: 0.1em;
     /* border: 1px solid palevioletred; */
 }
 
-#logo>figcaption {
+.logo>figcaption {
     font-family: "Rouge Script", cursive;
     font-weight: 650;
     /* padding: 0.5em; */
@@ -57,7 +57,7 @@ header {
     /* border: 3px solid green */
 }
 
-#headerNavBar>span {
+#headerNavBar>span, .sideNav>span {
     flex-basis: 18%;
     /* fa riferimento allo span in se, non dentro*/
     padding: 0.5em 0.3em;
@@ -73,7 +73,7 @@ header {
     /* border: 2px solid salmon; */
 }
 
-#headerNavBar>span:hover {
+#headerNavBar>span:hover, .sideNav>span:hover {
     font-size: 1.7rem;
     background-color: var(--buttonHoverBackground);
     font-style: italic;
@@ -94,7 +94,7 @@ header {
     /* border: 3px solid blue; */
 }
 
-#icons a {
+#icons a, .iconMobile {
     font-size: 2ch;
     background-color: #fbeeaa;
     padding: 0.5em;
@@ -229,7 +229,7 @@ section>figure>figcaption {
 .side {
     /* display: none;  */
 
-    background-color: white;
+    background-color: rgb(252, 234, 200);
     width: 300px;
     height: 100%;
     position: fixed;
@@ -255,6 +255,26 @@ section>figure>figcaption {
     background-color: rgba(0,0,0,0.7);
 }
 
+.sideNav {
+    display: flex;
+    flex-direction: column;
+
+    padding: 1em;
+}
+
+.sideNav>span {
+    margin-bottom: 1em;
+}
+.side>.logo {
+    margin: 1em;
+
+    /* border: 1px solid plum; */
+}
+.sideNav img {
+    display: block;
+}
+
+
 @keyframes example {
     from {right: -300px;}
     to {right: 0px;}
@@ -269,7 +289,7 @@ section>figure>figcaption {
         padding: 0.5em 0.8em;
     }
 
-    #logo {
+    .logo {
         flex-basis: 40%;
         font-size: 2rem;
     }
@@ -335,22 +355,37 @@ section>figure>figcaption {
     }
 }
 @media only screen and (max-width: 1300px) {
-   .pippo1, .pippo2 {
+    header {
+        justify-content: space-between;
+        padding: 0px 20px;
+    }
+   
+    .sectionImgDiv, .sectionTxtDiv{
         width: 100% !important;
+   }
+
+   .sectionImgDiv {
+        display: flex;
+        justify-content: center;
    }
 
    section>figure {
         flex-basis: calc(60% - 10px);
         border-radius: 20px;
-
+        /* padding: 0; */
    }
    #card {
         flex-basis: calc(40% - 10px);
         border-radius: 20px;
+        height: fit-content;
+        position: sticky;
+        top: 75px;
    }
    #article {
         max-width: 100%;
         margin: 0 20px;
+        position: relative;
+
    }
    .iconMobile {
         display: block;

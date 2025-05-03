@@ -16,7 +16,7 @@
 
 <body>
     <header>
-        <figure id="logo">
+        <figure class="logo">
             <img src="assets/logo.png" alt="logoImg">
             <figcaption>Vegan Honey</figcaption>
         </figure>
@@ -49,17 +49,17 @@
         </div>
 
         <div class="iconMobile" onclick="assegnaClasse()">
-            <i class="fa-solid fa-igloo"></i>
+            <i class="fa-solid fa-bars"></i>
         </div>
     </header>
 
     <main>
         <section id="article">
             <figure>
-                <div class="pippo1" style="width: 50%;">
-                    <img src="assets/honey.jpg" alt="honey" style="width: 100%;">
+                <div class="sectionImgDiv" style="width: 50%;">
+                    <img src="assets/honey.jpg" alt="honey" style="width: 90%;">
                 </div>
-                <figcaption class="pippo2" style="width: 50%;">
+                <figcaption class="sectionTxtDiv" style="width: 50%;">
                     <h2>Our delicious VHoney 🍎</h2>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam suscipit vel asperiores aperiam
                         laborum laudantium quod, voluptate possimus magni reprehenderit, quae sint tempore fugit. Dolore
@@ -103,6 +103,32 @@
     </main>
 
     <div id="side" class="side">
+        <figure class="logo">
+            <img src="assets/logo.png" alt="logoImg">
+            <figcaption>Vegan Honey</figcaption>
+        </figure>
+
+        <nav id="sideNav" class="sideNav">
+                <span>
+                    <img class="navImg" src="assets/logo.png">
+                    <a href="#article">Our VHoney</a>
+                </span>
+                <span>
+                    <img class="navImg" src="assets/logo.png">
+                    <a href="#traceHoney">Trace Honey</a>
+                </span>
+                <span>
+                    <img class="navImg" src="assets/logo.png">
+                    <a href="#card">Shop</a>
+                </span>
+                <span>
+                    <img class="navImg" src="assets/logo.png">
+                    <a href="#">Facilities</a></span>
+                <span>
+                    <img class="navImg" src="assets/logo.png">
+                    <a href="#">Contacts</a>
+                </span>
+        </nav>
 
     </div>
     <div class="sfondo" id="sfondo" onclick="assegnaClasse()">
@@ -124,11 +150,9 @@
             }
             else {
                 e.add("displaySee");
-                document.getElementById("sfondo").style.display="block";
+                document.getElementById("sfondo").style.display="flex";
             }
         }
-
-        
 
     </script>
 </body>
