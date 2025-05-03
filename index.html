@@ -144,11 +144,13 @@
         }
         function assegnaClasse() {
             let e = document.getElementById("side").classList;
-            if (e.contains("displaySee")) {
-                e.remove("displaySee");
+            if (e.contains("displaySee")) { //overlay presente
+                e.remove("displaySee"); //tolgo overlay
+                e.add("displayHide"); //smooth out
                 document.getElementById("sfondo").style.display="none";
             }
-            else {
+            else { //overlay da mettere
+                e.remove("displayHide");
                 e.add("displaySee");
                 document.getElementById("sfondo").style.display="flex";
             }

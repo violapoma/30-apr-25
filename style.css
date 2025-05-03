@@ -20,6 +20,8 @@ header {
     position: sticky;
     top: 0;
 
+    z-index: 5;
+
     /* border: 1px solid pink; */
 }
 
@@ -238,10 +240,16 @@ section>figure>figcaption {
     z-index: 9;
 }
 
+/* overlay */
 .displaySee { 
     /* display: block; */
     right: 0px;
     animation-name: example;
+    animation-duration: 1s;
+}
+.displayHide {
+    right: -300px;
+    animation-name: noshow;
     animation-duration: 1s;
 }
 
@@ -253,6 +261,7 @@ section>figure>figcaption {
     top: 0px;
     left: 0px;
     background-color: rgba(0,0,0,0.7);
+    z-index: 8;
 }
 
 .sideNav {
@@ -264,12 +273,17 @@ section>figure>figcaption {
 
 .sideNav>span {
     margin-bottom: 1em;
+    padding:1em 2em;
+    font-size: 1.6rem;
+    font-weight: 500;
+    justify-content: space-between;
 }
-.side>.logo {
+.side>.logo{
     margin: 1em;
-
-    /* border: 1px solid plum; */
+    display: flex;
+    justify-content: space-around;
 }
+
 .sideNav img {
     display: block;
 }
@@ -279,7 +293,10 @@ section>figure>figcaption {
     from {right: -300px;}
     to {right: 0px;}
 }
-
+@keyframes noshow {
+    from {right: 0px;}
+    to {right: -300px;}
+}
 
 /* smartphone e tablet */
 @media screen and (max-width:794px) {
