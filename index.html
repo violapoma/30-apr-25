@@ -47,15 +47,19 @@
             <a href="#" title="home"><i class="fa-solid fa-igloo"></i></a>
             <a href="#" title="checkout"><i class="fa-solid fa-basket-shopping"></i></a>
         </div>
+
+        <div class="iconMobile" onclick="assegnaClasse()">
+            <i class="fa-solid fa-igloo"></i>
+        </div>
     </header>
 
     <main>
         <section id="article">
             <figure>
-                <div>
-                    <img src="assets/honey.jpg" alt="honey">
+                <div class="pippo1" style="width: 50%;">
+                    <img src="assets/honey.jpg" alt="honey" style="width: 100%;">
                 </div>
-                <figcaption>
+                <figcaption class="pippo2" style="width: 50%;">
                     <h2>Our delicious VHoney 🍎</h2>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam suscipit vel asperiores aperiam
                         laborum laudantium quod, voluptate possimus magni reprehenderit, quae sint tempore fugit. Dolore
@@ -66,8 +70,10 @@
 
             <div id="card">
                 <div class="cardContent">
+                    <div class="divImmagine">
 
-                    <img src="./assets/honey.jpg" alt="honey">
+                    </div>
+                    <!-- <img src="./assets/honey.jpg" alt="honey"> -->
 
                     <div class="cardTxt">
                         <div class="cardInfo">
@@ -96,6 +102,13 @@
 
     </main>
 
+    <div id="side" class="side">
+
+    </div>
+    <div class="sfondo" id="sfondo" onclick="assegnaClasse()">
+
+    </div>
+
     <script>
         function showNavImg(e) {
             e.querySelector('img').style.display="block";
@@ -103,6 +116,20 @@
         function hideNavImg(e) {
             e.querySelector('img').style.display="none";
         }
+        function assegnaClasse() {
+            let e = document.getElementById("side").classList;
+            if (e.contains("displaySee")) {
+                e.remove("displaySee");
+                document.getElementById("sfondo").style.display="none";
+            }
+            else {
+                e.add("displaySee");
+                document.getElementById("sfondo").style.display="block";
+            }
+        }
+
+        
+
     </script>
 </body>
 
