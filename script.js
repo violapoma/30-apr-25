@@ -150,6 +150,7 @@ function removeItem(item) {
         item.nextElementSibling.textContent = product.quantity;
         NUMBER_OF_ITEMS--;
         setBuyBtn();
+        updateTotal();
         return;
     }
     console.log("[remove]: product quantity: " + product.quantity);
