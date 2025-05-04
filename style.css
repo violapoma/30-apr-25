@@ -311,7 +311,23 @@ button {
 }
 .orderItem {
     font-size: 1.2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
+.counterContainer {
+    padding-left: 4em;
+}
+.qty {
+    padding: 0 0.5em;
+}
+.counterBtn{
+    width: 23px;
+    padding: 0;
+    border: 1.5px solid var(--overline);
+    border-radius: 50%;
+}
+
 #totalCost {
     font-size: 1.5rem;
 }
@@ -320,6 +336,11 @@ button {
     font-weight: 600;
     align-self: flex-end;
 }
+.disabledBtn {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
 
 
 @keyframes example {
