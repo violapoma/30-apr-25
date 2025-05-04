@@ -45,11 +45,12 @@
 
         <div id="icons">
             <a href="#" title="home"><i class="fa-solid fa-igloo"></i></a>
-            <a href="#" title="checkout"><i class="fa-solid fa-basket-shopping"></i></a>
+            <a href="#" title="checkout"><i class="fa-solid fa-basket-shopping" onclick="assegnaClasse('shoppingCart')"></i></a>
         </div>
 
-        <div class="iconMobile" onclick="assegnaClasse()">
-            <i class="fa-solid fa-bars"></i>
+        <div class="iconMobile">
+            <i class="fa-solid fa-basket-shopping" onclick="assegnaClasse('shoppingCart')"></i>
+            <i class="fa-solid fa-bars" onclick="assegnaClasse('side')"></i>
         </div>
     </header>
 
@@ -90,6 +91,7 @@
 
     </main>
 
+    <!-- sidebar con menu -->
     <div id="side" class="side">
         <figure class="logo">
             <img src="assets/logo.png" alt="logoImg">
@@ -99,53 +101,104 @@
         <nav id="sideNav" class="sideNav">
             <span>
                 <img class="navImg" src="assets/logo.png">
-                <a href="#article">Your cart</a>
+                <a href="#article">Our VHoney</a>
             </span>
-                <span>
-                    <img class="navImg" src="assets/logo.png">
-                    <a href="#article">Our VHoney</a>
-                </span>
-                <span>
-                    <img class="navImg" src="assets/logo.png">
-                    <a href="#traceHoney">Trace Honey</a>
-                </span>
-                <span>
-                    <img class="navImg" src="assets/logo.png">
-                    <a href="#card">Shop</a>
-                </span>
-                <span>
-                    <img class="navImg" src="assets/logo.png">
-                    <a href="#">Facilities</a></span>
-                <span>
-                    <img class="navImg" src="assets/logo.png">
-                    <a href="#">Contacts</a>
-                </span>
+            <span>
+                <img class="navImg" src="assets/logo.png">
+                <a href="#traceHoney">Trace Honey</a>
+            </span>
+            <span>
+                <img class="navImg" src="assets/logo.png">
+                <a href="#card">Shop</a>
+            </span>
+            <span>
+                <img class="navImg" src="assets/logo.png">
+                <a href="#">Facilities</a></span>
+            <span>
+                <img class="navImg" src="assets/logo.png">
+                <a href="#">Contacts</a>
+            </span>
         </nav>
 
     </div>
-    <div class="sfondo" id="sfondo" onclick="assegnaClasse()">
 
+    <!-- sidebar con riepilogo ordine (work in progress) -->
+    <div id="shoppingCart" class="side">
+        <figure class="logo">
+            <img src="assets/logo.png" alt="logoImg">
+            <figcaption>Vegan Honey</figcaption>
+        </figure>
+        <div class="orderListContent">
+            <h2>Your order recap:</h2>
+            <ul id="orderList">
+            </ul>
+            <h3>Your total is: <span id="totalCost">0</span>€</h3>
+            <button id="buy">BUY</button>
+        </div>
+    </div>
+
+    <!-- overlay per le sidebar -->
+    <div class="sfondo" id="sfondo">
     </div>
 
     <script>
         function showNavImg(e) {
-            e.querySelector('img').style.display="block";
+            e.querySelector('img').style.display = "block";
         }
         function hideNavImg(e) {
-            e.querySelector('img').style.display="none";
+            e.querySelector('img').style.display = "none";
         }
-        function assegnaClasse() {
-            let e = document.getElementById("side").classList;
-            if (e.contains("displaySee")) { //overlay presente
-                e.remove("displaySee"); //tolgo overlay
+
+        // vale sia per sidebar che per riepilogo ordine
+        function assegnaClasse(qualeSide) {
+            console.log("start:" + qualeSide);
+            let e = document.getElementById(qualeSide).classList;
+
+            //assegno onclick all'overlay in base a quale sidebar lo attiva
+            const overlay = document.getElementById('sfondo'); 
+            overlay.setAttribute('onclick', 'assegnaClasse("' + qualeSide + '")');
+
+            console.log(overlay.outerHTML); 
+
+            if (e.contains("displaySee")) { //sidebar presente
+                e.remove("displaySee"); //tolgo sidebar
                 e.add("displayHide"); //smooth out
-                document.getElementById("sfondo").style.display="none";
+                document.getElementById("sfondo").style.display = "none"; //tolgo overlay
             }
-            else { //overlay da mettere
+            else { //sidebar da far uscire overlay da mettere
                 e.remove("displayHide");
                 e.add("displaySee");
-                document.getElementById("sfondo").style.display="flex";
+                document.getElementById("sfondo").style.display = "flex";
             }
+        }
+
+        function addToCart() {
+
+
+            let shoppingList = document.getElementById("orderList");
+            console.log(shoppingList);
+            const listItem = document.createElement('li');
+            listItem.classList.add('orderItem');
+            listItem.innerHTML = "VHoney, 1x, €<span class='itemPrice'> 7</span>";
+            console.log(listItem);
+            shoppingList.appendChild(listItem);
+
+            updateTotal();
+        }
+
+        function updateTotal() {
+            console.log("updating total");
+            let partial = 0;
+            let itemPrices = document.querySelectorAll('.itemPrice');
+            console.log("UL length: " + itemPrices.length);
+            for (let i = 0; i < itemPrices.length; i++) {
+                console.log(itemPrices[i].textContent);
+                //parsefloat altrimenti prende textcontent come stringa
+                partial += parseFloat(itemPrices[i].textContent);
+            }
+            console.log("new total: " + partial);
+            document.getElementById("totalCost").textContent = partial;
+
         }
 
     </script>

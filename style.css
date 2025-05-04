@@ -1,6 +1,7 @@
 :root {
     --buttonBackground: #F3DF85;
     --buttonHoverBackground: #fcdc4f;
+    --overline: #602304;
 }
 
 body {
@@ -96,13 +97,13 @@ header {
     /* border: 3px solid blue; */
 }
 
-#icons a, .iconMobile {
+#icons a, .iconMobile i {
     font-size: 2ch;
     background-color: #fbeeaa;
     padding: 0.5em;
     border-radius: 10px;
 
-    border: 2px solid #602304;
+    border: 2px solid var(--overline);
 
 }
 
@@ -201,13 +202,14 @@ section>figure>figcaption {
     font-size: 1.5rem;
 }
 
-.cardTxt>button {
+button {
     flex-basis: 80%;
     background-color: var(--buttonBackground);
     font-size: 1.3rem;
     border: none;
-    padding: 0.3em 0.2em;
+    padding: 0.3em 0.5em;
     border-radius: 30px;
+    border: 2px solid var(--overline);
 }
 
 .cardTxt>button:hover {
@@ -242,13 +244,14 @@ section>figure>figcaption {
     z-index: 9;
 }
 
-/* overlay */
+/* !!sidebar!! */
 .displaySee { 
     /* display: block; */
     right: 0px;
     animation-name: example;
     animation-duration: 1s;
 }
+/* !!sidebar!! */
 .displayHide {
     right: -300px;
     animation-name: noshow;
@@ -290,6 +293,34 @@ section>figure>figcaption {
     display: block;
 }
 
+#shoppingCart {
+    padding: 20px;
+}
+
+.orderListContent {
+    display: flex;
+    flex-direction: column;
+}
+#orderList {
+    padding: 0 20px;
+}
+/* personalizzo la lista */
+.orderItem::before {
+    content: "💛";
+    padding-right: 1em;
+}
+.orderItem {
+    font-size: 1.2rem;
+}
+#totalCost {
+    font-size: 1.5rem;
+}
+
+#buy {
+    font-weight: 600;
+    align-self: flex-end;
+}
+
 
 @keyframes example {
     from {right: -300px;}
@@ -309,6 +340,9 @@ section>figure>figcaption {
     }
     .logo {
         flex-basis: 50%;
+    }
+    .logo img {
+        width: 40px;
     }
    
     .sectionImgDiv, .sectionTxtDiv{
